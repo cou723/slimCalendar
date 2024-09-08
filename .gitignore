@@ -8,4 +8,4 @@ node_modules
 styled-system
 styled-system-studio
 
-env.local
+.env.local
