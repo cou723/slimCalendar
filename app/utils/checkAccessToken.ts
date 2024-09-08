@@ -9,7 +9,6 @@ export async function checkAccessToken(accessToken: string): Promise<boolean> {
 		const tokenInfo = await oauth2Client.getTokenInfo(accessToken);
 		return tokenInfo.expiry_date > Date.now();
 	} catch (error) {
-		console.error("Access token is invalid or expired:", error);
 		return false;
 	}
 }

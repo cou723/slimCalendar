@@ -2,6 +2,7 @@ import { vitePlugin as remix } from "@remix-run/dev";
 import { vercelPreset } from "@vercel/remix/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { remixPWA } from "@remix-pwa/dev";
 /// <reference types="vitest" />
 
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
 			presets: [vercelPreset()],
 		}),
 		tsconfigPaths(),
+		remixPWA(),
 	],
 	test: {
 		include: ["app/**/*.{test,spec}.{js,ts}"],

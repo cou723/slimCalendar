@@ -19,6 +19,7 @@ export const loader = async ({ request }: { request: Request }) => {
 	const session = await getSession(request.headers.get("Cookie"));
 	const accessToken = session.get("accessToken");
 	if (!(await checkAccessToken(accessToken))) {
+		console.log("hoge");
 		return redirect("/login");
 	}
 

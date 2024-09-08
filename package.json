@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@googleapis/calendar": "^9.7.9",
+    "@remix-pwa/dev": "^3.1.0",
+    "@remix-pwa/worker-runtime": "^2.1.4",
     "@remix-run/node": "^2.11.2",
     "@remix-run/react": "^2.11.2",
     "@remix-run/serve": "^2.11.2",

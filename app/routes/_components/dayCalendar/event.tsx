@@ -3,6 +3,7 @@ import {
 	eventDurationHours,
 	startHoursFloat,
 } from "@/types/googleCalendarEvent";
+import { format } from "date-fns";
 import type { FC } from "react";
 import { css } from "styled-system/css";
 
@@ -31,13 +32,22 @@ export const Event: FC<Props> = ({ event: e, heightPerHour }) => {
 				top: "var(--event-top)",
 				position: "absolute",
 				border: "1px solid black",
+				padding: "4px",
+				width: "100%",
+				borderRadius: "0.5rem",
+				display: "flex",
+				flexDirection: "row",
+				gap: "0.5rem",
 			})}
 			style={{
 				"--event-height": eventHeight,
 				"--event-top": eventTop,
 			}}
 		>
-			{e.event.summary}-{e.event.start?.dateTime}-{e.event.end?.dateTime}
+			<div>{e.event.summary}</div>
+			<div>
+				{format(e.start, "h:mm")}-{format(e.end, "h:mm")}
+			</div>
 		</div>
 	);
 };

@@ -13,7 +13,7 @@ type Props = {
 // コンポーネントでデータを使用
 export const DayCalendar: FC<Props> = ({ events }) => {
 	console.log("day calendar");
-	const heightPerHour = 50;
+	const HEIGHT_PER_HOUR = 70;
 	return (
 		<div
 			className={css({
@@ -21,11 +21,14 @@ export const DayCalendar: FC<Props> = ({ events }) => {
 				height: "99vh",
 				position: "relative",
 			})}
+			style={{
+				height: `${HEIGHT_PER_HOUR * 24}px`,
+			}}
 		>
 			{events
 				?.filter((event) => !event.isAllDayEvent())
 				.map((s) => (
-					<Event event={s} key={s.event.id} heightPerHour={heightPerHour} />
+					<Event event={s} key={s.event.id} heightPerHour={HEIGHT_PER_HOUR} />
 				))}
 		</div>
 	);

@@ -12,6 +12,15 @@ export class GoogleCalendarEvent {
 		if (!this.event.end.date) return false;
 		return isValidDate(this.event.end.date);
 	}
+
+	get start(): Date {
+		if (!this.event.start?.dateTime) throw new Error();
+		return parseISO(this.event.start.dateTime);
+	}
+	get end(): Date {
+		if (!this.event.end?.dateTime) throw new Error();
+		return parseISO(this.event.end.dateTime);
+	}
 }
 
 export function eventDurationHours(this: calendar_v3.Schema$Event) {
